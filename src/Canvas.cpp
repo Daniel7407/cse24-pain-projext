@@ -24,6 +24,10 @@ void Canvas::addCircle(float x, float y, float r, float g, float b) {
     shapes.push_back(new Circle(x, y, r, g, b));
 }
 
+void Canvas::addPolygon(float x, float y, float r, float g, float b){
+    shapes.push_back(new Polygon(x, y, r, g, b)); 
+}
+
 void Canvas::clear() {
     for (unsigned int i = 0 ; i < shapes.size(); i++) {
         delete shapes[i];
