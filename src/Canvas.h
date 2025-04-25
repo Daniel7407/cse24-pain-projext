@@ -5,6 +5,7 @@
 #include <vector>
 #include "Point.h"
 #include "Rectangle.h"
+#include "Triangle.h"
 #include "Circle.h"
 #include "Shape.h"
 #include "Scribble.h"
@@ -20,6 +21,8 @@ public:
     void addPoint(float x, float y, float r, float g, float b, int size);
 
     void addRectangle(float x, float y, float r, float g, float b);
+
+    void addTriangle(float x, float y, float r, float g, float b); 
 
     void addCircle(float x, float y, float r, float g, float b);
 

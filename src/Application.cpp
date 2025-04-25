@@ -26,6 +26,9 @@ void Application::onCanvasMouseDown(bobcat::Widget* sender, float mx, float my) 
     else if (tool == CIRCLE) { 
         canvas->addCircle(mx, my, color.getR(), color.getG(), color.getB());
         canvas->redraw();
+    } else if (tool == TRIANGLE) { 
+        canvas->addTriangle(mx, my, color.getR(), color.getG(), color.getB()); 
+        canvas->redraw(); 
     }
 
 }
@@ -63,7 +66,7 @@ void Application::onToolbarChange(bobcat::Widget* sender) {
 }
 
 Application::Application() {
-    window = new Window(25, 75, 400, 400, "Lecture 19");
+    window = new Window(25, 75, 400, 400, "Pain Application");
 
     toolbar = new Toolbar(0, 0, 50, 350);
     canvas = new Canvas(50, 0, 350, 350);
