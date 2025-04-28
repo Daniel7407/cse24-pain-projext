@@ -6,6 +6,11 @@
 
 Canvas::Canvas(int x, int y, int w, int h) : Canvas_(x, y, w, h) {
     curr = nullptr;
+    selectedShape = nullptr; 
+}
+
+void Canvas::selectShape(float x, float y){
+
 }
 
 void Canvas::addPoint(float x, float y, float r, float g, float b, int size) {
