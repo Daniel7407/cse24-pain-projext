@@ -33,8 +33,7 @@ void Application::onCanvasMouseDown(bobcat::Widget* sender, float mx, float my) 
         canvas->addPolygon(mx, my, color.getR(), color.getG(), color.getB());
         canvas->redraw(); 
     } else if (tool == SELECTOR){
-        canvas->selectShape(mx, my);
-        canvas->redraw();
+        selectedShape = canvas->selectShape(mx, my);
     }
 
 }

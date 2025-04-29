@@ -7,17 +7,16 @@
 
 Canvas::Canvas(int x, int y, int w, int h) : Canvas_(x, y, w, h) {
     curr = nullptr;
-    selectedShape = nullptr; 
 }
 
-void Canvas::selectShape(float x, float y){
-    selectedShape = nullptr;
+Shape* Canvas::selectShape(float x, float y){
     for (int i = shapes.size() - 1; i >= 0; i--){
         if(shapes[i]->wasClicked(x, y)){ 
-            selectedShape = shapes[i]; 
-            break;
+            return shapes[i]; 
         }
     }
+
+    return nullptr; 
 }
 
 void Canvas::addPoint(float x, float y, float r, float g, float b, int size) {

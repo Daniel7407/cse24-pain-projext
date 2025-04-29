@@ -15,12 +15,11 @@ class Canvas : public bobcat::Canvas_ {
     std::vector<Shape*> shapes;
 
     Scribble* curr;
-    Shape* selectedShape; 
 
 public:
     Canvas(int x, int y, int w, int h);
 
-    void selectShape(float x, float y); 
+    Shape* selectShape(float x, float y); 
 
     void addPoint(float x, float y, float r, float g, float b, int size);
 
