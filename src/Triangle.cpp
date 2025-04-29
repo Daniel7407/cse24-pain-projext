@@ -32,3 +32,10 @@ void Triangle::draw() {
     glEnd(); 
     
 }
+
+bool Triangle::wasClicked(float x, float y){
+    if ((y < (-2*x + (this->y + width/2 + 2 * this->x))) && (y < (2*x + (this->y + width/2 - 2*this->x))) && (y > (this->y - width/2))){
+        return true; 
+    }
+    return false;  
+}

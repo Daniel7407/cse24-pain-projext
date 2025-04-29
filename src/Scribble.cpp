@@ -10,6 +10,10 @@ void Scribble::draw(){
     }
 }
 
+bool Scribble::wasClicked(float x, float y){
+    return true; 
+}
+
 Scribble::~Scribble(){
     for (unsigned int i = 0; i < points.size(); i++){
         delete points[i];

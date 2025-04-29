@@ -31,3 +31,11 @@ void Circle::draw() {
         }
     glEnd();
 }
+
+bool Circle::wasClicked(float x, float y){
+    if (sqrt(pow(x - this->x, 2) + pow(y - this->y, 2)) <= this->radius){
+        return true; 
+    }
+
+    return false; 
+}

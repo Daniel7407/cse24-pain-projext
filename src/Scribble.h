@@ -13,6 +13,7 @@ public:
     void addPoint(float x, float y, float r, float g, float b, int size);
 
     void draw();
+    bool wasClicked(float x, float y); 
 
     ~Scribble();
 };

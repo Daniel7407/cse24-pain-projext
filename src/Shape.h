@@ -17,6 +17,8 @@ public:
     // This forces every child of Shape to have a draw
     // function implemented
 
+    virtual bool wasClicked(float x, float y) = 0; 
+
     // Any ADT must have a virtual destructor
     virtual ~Shape(){}
 };

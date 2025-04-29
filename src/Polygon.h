@@ -16,6 +16,7 @@ public:
     Polygon(); 
     Polygon(float x, float y, float r, float g, float b); 
     void draw(); 
+    bool wasClicked(float x, float y); 
 };
 
 #endif

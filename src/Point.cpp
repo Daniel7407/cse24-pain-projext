@@ -34,6 +34,10 @@ void Point::draw() {
     glEnd();
 }
 
+bool Point::wasClicked(float x, float y){
+    return true; 
+}
+
 float Point::getX() const {
     return x;
 }

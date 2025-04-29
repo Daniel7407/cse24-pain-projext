@@ -18,6 +18,7 @@ public:
     Point(float x, float y, float r, float g, float b, int size);
 
     void draw();
+    bool wasClicked(float x, float y); 
 
     float getX() const;
     float getY() const;

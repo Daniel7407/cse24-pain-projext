@@ -33,3 +33,10 @@ void Polygon::draw() {
         glVertex2f(x - width / 2, y);
     glEnd(); 
 }
+
+bool Polygon::wasClicked(float x, float y){
+    if((x > this->x - width/2 * .7) && (x < this->x + width/2 * .7) && (y < this->y + height / 2) && (y > this->y - height/2)){
+        return true; 
+    }
+    return false; 
+}
