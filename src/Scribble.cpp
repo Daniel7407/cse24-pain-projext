@@ -11,7 +11,30 @@ void Scribble::draw(){
 }
 
 bool Scribble::wasClicked(float x, float y){
-    return true; 
+    for(unsigned int i = 0; i < points.size(); i++){
+        if (points[i]->wasClicked(x, y)){
+            return true; 
+        }
+    }
+
+    return false; 
+}
+
+void Scribble::changePos(float x, float y){ 
+    for (unsigned int i = points.size() - 1; i > 0; i--){
+        if (points[i]->wasClicked(x, y)){
+            Point* temp = points[i]; 
+            points.erase(points.begin() + i); 
+            points.push_back(temp); 
+            break; 
+        }
+    }
+    float changeInX = x - points[points.size() - 1]->getX(); 
+    float changeInY = y - points[points.size() - 1]->getY(); 
+
+    for (unsigned int i = 0; i < points.size(); i++){
+        points[i]->changePos(points[i]->getX() + changeInX, points[i]->getY() + changeInY);
+    }
 }
 
 Scribble::~Scribble(){
@@ -20,3 +43,4 @@ Scribble::~Scribble(){
     }
     points.clear();
 }
+

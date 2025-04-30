@@ -40,3 +40,8 @@ bool Polygon::wasClicked(float x, float y){
     }
     return false; 
 }
+
+void Polygon::changePos(float x, float y){ 
+    this->x = x; 
+    this->y = y; 
+}

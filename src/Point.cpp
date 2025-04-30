@@ -1,5 +1,6 @@
 #include "Point.h"
 #include <GL/freeglut.h>
+#include <cmath>
 
 Point::Point() {
     x = 0.0;
@@ -35,7 +36,11 @@ void Point::draw() {
 }
 
 bool Point::wasClicked(float x, float y){
-    return true; 
+    if (sqrt(pow(x - this->x, 2) + pow(y - this->y, 2)) <= this->size/200.0){
+        return true; 
+    }
+
+    return false; 
 }
 
 float Point::getX() const {
@@ -60,4 +65,9 @@ float Point::getB() const {
 
 int Point::getSize() const {
     return size;
+}
+
+void Point::changePos(float x, float y){ 
+    this->x = x; 
+    this->y = y; 
 }

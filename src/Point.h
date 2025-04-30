@@ -19,6 +19,7 @@ public:
 
     void draw();
     bool wasClicked(float x, float y); 
+    void changePos(float x, float y); 
 
     float getX() const;
     float getY() const;

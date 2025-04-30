@@ -17,7 +17,7 @@ class Triangle : public Shape {
         Triangle(float x, float y, float r, float g, float b); 
         void draw(); 
         bool wasClicked(float x, float y); 
-
+        void changePos(float x, float y); 
 };
 
 #endif

@@ -38,3 +38,8 @@ bool Rectangle::wasClicked(float x, float y){
     }
     return false; ; 
 }
+
+void Rectangle::changePos(float x, float y){ 
+    this->x = x; 
+    this->y = y; 
+}

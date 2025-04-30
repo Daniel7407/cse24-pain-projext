@@ -39,3 +39,8 @@ bool Triangle::wasClicked(float x, float y){
     }
     return false;  
 }
+
+void Triangle::changePos(float x, float y){ 
+    this->x = x; 
+    this->y = y; 
+}

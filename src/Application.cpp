@@ -53,6 +53,9 @@ void Application::onCanvasDrag(bobcat::Widget* sender, float mx, float my) {
     else if (tool == ERASER) {
         canvas->updateScribble(mx, my, 1.0, 1.0, 1.0, 14);
         canvas->redraw();
+    } else if (tool == SELECTOR && selectedShape) { 
+        selectedShape->changePos(mx, my);
+        canvas->redraw();
     }
 }
 

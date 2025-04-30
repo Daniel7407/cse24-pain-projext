@@ -18,6 +18,7 @@ public:
     // function implemented
 
     virtual bool wasClicked(float x, float y) = 0; 
+    virtual void changePos(float x, float y) = 0; 
 
     // Any ADT must have a virtual destructor
     virtual ~Shape(){}
