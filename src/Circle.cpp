@@ -44,3 +44,10 @@ void Circle::changePos(float x, float y){
     this->x = x; 
     this->y = y; 
 }
+
+void Circle::setColor(float r, float g, float b){
+    this->r = r; 
+    this->g = g; 
+    this->b = b; 
+}
+

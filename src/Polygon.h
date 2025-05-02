@@ -18,6 +18,7 @@ public:
     void draw(); 
     bool wasClicked(float x, float y); 
     void changePos(float x, float y); 
+    void setColor(float r, float g, float b); 
 };
 
 #endif

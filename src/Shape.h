@@ -16,7 +16,7 @@ public:
 
     // This forces every child of Shape to have a draw
     // function implemented
-
+    virtual void setColor(float r, float g, float b) = 0;
     virtual bool wasClicked(float x, float y) = 0; 
     virtual void changePos(float x, float y) = 0; 
 

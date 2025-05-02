@@ -8,10 +8,10 @@ using namespace bobcat;
 
 void ColorSelector::onSliderChanged_cb(Fl_Widget* widget, void* userData){
     ColorSelector* self = static_cast<ColorSelector*>(userData); 
-    self->onChange();
+    self->onSliderChange();
 }
 
-void ColorSelector::onChange(){
+void ColorSelector::onSliderChange(){
     red = static_cast<int>(redSlider->value()); 
     blue = static_cast<int>(blueSlider->value()); 
     green = static_cast<int>(greenSlider->value()); 
@@ -23,6 +23,10 @@ void ColorSelector::onChange(){
     displayButton->color(fl_rgb_color(red, green, blue));
 
     redraw(); 
+
+    if (onChangeCb) {
+        onChangeCb(this);
+    }
 }
 
 Color ColorSelector::getColor() const { 

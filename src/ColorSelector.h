@@ -20,7 +20,7 @@ class ColorSelector : public bobcat::Group {
     bobcat::Button* displayButton; 
 
     static void onSliderChanged_cb(Fl_Widget* widget, void* userData); 
-    void onChange(); 
+    void onSliderChange(); 
 
 public:
     ColorSelector(int x, int y, int w, int h);

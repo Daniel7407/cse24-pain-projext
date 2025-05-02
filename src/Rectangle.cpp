@@ -43,3 +43,9 @@ void Rectangle::changePos(float x, float y){
     this->x = x; 
     this->y = y; 
 }
+
+void Rectangle::setColor(float r, float g, float b){
+    this->r = r; 
+    this->g = g; 
+    this->b = b; 
+}

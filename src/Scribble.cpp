@@ -37,6 +37,12 @@ void Scribble::changePos(float x, float y){
     }
 }
 
+void Scribble::setColor(float r, float g, float b){
+    for (unsigned int i = 0; i < points.size(); i++){
+        points[i]->setColor(r, g, b); 
+    }
+}
+
 Scribble::~Scribble(){
     for (unsigned int i = 0; i < points.size(); i++){
         delete points[i];

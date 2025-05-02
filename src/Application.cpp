@@ -36,6 +36,10 @@ void Application::onCanvasMouseDown(bobcat::Widget* sender, float mx, float my) 
         selectedShape = canvas->selectShape(mx, my);
     }
 
+    if (tool != SELECTOR){
+        selectedShape = nullptr; 
+    }
+
 }
 
 void Application::onCanvasMouseUp(bobcat::Widget* sender, float mx, float my) {
@@ -62,6 +66,11 @@ void Application::onCanvasDrag(bobcat::Widget* sender, float mx, float my) {
 
 void Application::onToolbarChange(bobcat::Widget* sender) {
     ACTION action = toolbar->getAction();
+    TOOL tool = toolbar->getTool(); 
+
+    if (tool != SELECTOR){
+        selectedShape = nullptr; 
+    }
 
     if (action == CLEAR) {
         canvas->clear();
@@ -70,6 +79,15 @@ void Application::onToolbarChange(bobcat::Widget* sender) {
     else if (action == UNDO) {
         canvas->undo();
         canvas->redraw();
+    }
+}
+
+void Application::onColorSelectorChange(bobcat::Widget* sender){
+    Color color = colorSelector->getColor();
+
+    if (selectedShape){
+        selectedShape->setColor(color.getR(), color.getG(), color.getB()); 
+        canvas->redraw(); 
     }
 }
 
@@ -89,5 +107,6 @@ Application::Application() {
     ON_DRAG(canvas, Application::onCanvasDrag);
     ON_CHANGE(toolbar, Application::onToolbarChange);
     ON_MOUSE_UP(canvas, Application::onCanvasMouseUp);
+    ON_CHANGE(colorSelector, Application::onColorSelectorChange); 
     window->show();
 }
