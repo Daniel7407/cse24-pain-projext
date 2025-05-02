@@ -14,6 +14,11 @@ class ColorSelector : public bobcat::Group {
     Fl_Slider* greenSlider; 
     Fl_Slider* blueSlider; 
 
+    bobcat::TextBox* redDisplay; 
+    bobcat::TextBox* greenDisplay; 
+    bobcat::TextBox* blueDisplay; 
+    bobcat::Button* displayButton; 
+
     static void onSliderChanged_cb(Fl_Widget* widget, void* userData); 
     void onChange(); 
 

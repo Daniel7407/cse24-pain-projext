@@ -1,1 +1,18 @@
+Group Name
+----------
+
+Generic Group Name 
+
+Members
+-------
+
 Daniel Pulido-Alaniz
+
+Designated Submitter
+--------------------
+
+Daniel Pulido-Alaniz
+
+Github Repo Link
+----------------
+https://github.com/Daniel7407/cse24-pain-projext.git
