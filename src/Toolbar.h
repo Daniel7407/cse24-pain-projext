@@ -12,14 +12,12 @@ class Toolbar : public bobcat::Group {
     bobcat::Image* triangleButton;
     bobcat::Image* rectangleButton;
     bobcat::Image* polygonButton; 
-    bobcat::Image* undoButton;
     bobcat::Image* clearButton;
     bobcat::Image* selectorButton; 
     bobcat::Image* sendToBackButton; 
     bobcat::Image* sendToFrontButton; 
     bobcat::Image* plusButton; 
     bobcat::Image* minusButton; 
-    bobcat::TextBox* currentSize; 
 
     TOOL tool;
     ACTION action;

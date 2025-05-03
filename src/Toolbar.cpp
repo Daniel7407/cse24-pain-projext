@@ -11,7 +11,6 @@ void Toolbar::deselectAllTools() {
     triangleButton->color(FL_BACKGROUND_COLOR);
     rectangleButton->color(FL_BACKGROUND_COLOR);
     polygonButton->color(FL_BACKGROUND_COLOR); 
-    undoButton->color(FL_BACKGROUND_COLOR);
     selectorButton->color(FL_BACKGROUND_COLOR); 
     sendToBackButton->color(FL_BACKGROUND_COLOR); 
     sendToFrontButton->color(FL_BACKGROUND_COLOR); 
@@ -62,11 +61,7 @@ void Toolbar::onClick(bobcat::Widget* sender) {
         tool = RECTANGLE;
     } else if (sender == polygonButton) { 
         tool = POLYGON; 
-    }
-    else if (sender == undoButton) {
-        action = UNDO;
-    }
-    else if (sender == clearButton) {
+    } else if (sender == clearButton) {
         action = CLEAR;
     } else if (sender == selectorButton){
         tool = SELECTOR; 
@@ -103,14 +98,12 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     triangleButton = new Image(x, y + 150, 50, 50, "./assets/triangle.png");
     rectangleButton = new Image(x, y + 200, 50, 50, "./assets/rectangle.png");
     polygonButton = new Image(x, y + 250, 50, 50, "./assets/polygon.png"); 
-    undoButton = new Image(x, y + 300, 50, 50, "./assets/undo.png");
-    clearButton = new Image(x, y + 350, 50, 50, "./assets/clear.png");
+    clearButton = new Image(x, y + 300, 50, 50, "./assets/clear.png");
     selectorButton = new Image(x + 50, y, 50, 50, "./assets/mouse.png"); 
     sendToBackButton = new Image(x + 50, y + 50, 50, 50, "./assets/send-to-back.png"); 
     sendToFrontButton = new Image(x + 50, y + 100, 50, 50, "./assets/bring-to-front.png"); 
     plusButton = new Image(x + 50, y + 150, 50, 50, "./assets/plus.png"); 
-    minusButton = new Image(x + 50, y + 250, 50, 50, "./assets/minus.png"); 
-    currentSize = new TextBox(x + 50, y + 200, 50, 50, "Size: "); 
+    minusButton = new Image(x + 50, y + 200, 50, 50, "./assets/minus.png"); 
 
     tool = PENCIL;
     action = NONE;
@@ -121,7 +114,6 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     triangleButton->box(FL_BORDER_BOX);
     rectangleButton->box(FL_BORDER_BOX);
     polygonButton->box(FL_BORDER_BOX);
-    undoButton->box(FL_BORDER_BOX);
     clearButton->box(FL_BORDER_BOX);
     selectorButton->box(FL_BORDER_BOX);
     sendToBackButton->box(FL_BORDER_BOX);
@@ -137,7 +129,6 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     ON_CLICK(triangleButton, Toolbar::onClick);
     ON_CLICK(rectangleButton, Toolbar::onClick);
     ON_CLICK(polygonButton, Toolbar::onClick); 
-    ON_CLICK(undoButton, Toolbar::onClick);
     ON_CLICK(clearButton, Toolbar::onClick);
     ON_CLICK(selectorButton, Toolbar::onClick); 
     ON_CLICK(sendToBackButton, Toolbar::onClick); 

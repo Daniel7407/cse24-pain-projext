@@ -76,10 +76,6 @@ void Application::onToolbarChange(bobcat::Widget* sender) {
         canvas->clear();
         canvas->redraw();
     }
-    else if (action == UNDO) {
-        canvas->undo();
-        canvas->redraw();
-    }
 
     if (selectedShape){
         if (action == SEND_TO_BACK){

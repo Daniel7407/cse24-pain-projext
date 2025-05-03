@@ -52,13 +52,11 @@ void Triangle::setColor(float r, float g, float b){
 }
 
 void Triangle::changeSize(int delta){
-    if (height > 0.04){
+    if (height > 0.08){
         height += delta * .04; 
         width += delta * .04;
-    } else if (height == 0.04 && delta == 1) { 
+    } else if (height <= 0.08 && delta == 1) { 
         height += delta * .04; 
         width += delta * .04;
-    } else if (height == .04 && delta == -1){
-
     }
 }
