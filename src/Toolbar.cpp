@@ -98,7 +98,7 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     triangleButton = new Image(x, y + 150, 50, 50, "./assets/triangle.png");
     rectangleButton = new Image(x, y + 200, 50, 50, "./assets/rectangle.png");
     polygonButton = new Image(x, y + 250, 50, 50, "./assets/polygon.png"); 
-    clearButton = new Image(x, y + 300, 50, 50, "./assets/clear.png");
+    clearButton = new Image(x + 50, y + 250, 50, 50, "./assets/clear.png");
     selectorButton = new Image(x + 50, y, 50, 50, "./assets/mouse.png"); 
     sendToBackButton = new Image(x + 50, y + 50, 50, 50, "./assets/send-to-back.png"); 
     sendToFrontButton = new Image(x + 50, y + 100, 50, 50, "./assets/bring-to-front.png"); 

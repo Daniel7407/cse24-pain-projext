@@ -15,8 +15,7 @@ void Application::onCanvasMouseDown(bobcat::Widget* sender, float mx, float my) 
         canvas->redraw();
     }
     else if (tool == ERASER) {
-        canvas->startScribble();
-        canvas->updateScribble(mx, my, 1, 1, 1, 14);
+        canvas->erase(canvas->selectShape(mx, my)); 
         canvas->redraw();
     }
     else if (tool == RECTANGLE) {
@@ -55,7 +54,7 @@ void Application::onCanvasDrag(bobcat::Widget* sender, float mx, float my) {
         canvas->redraw();
     }
     else if (tool == ERASER) {
-        canvas->updateScribble(mx, my, 1.0, 1.0, 1.0, 14);
+        canvas->erase(canvas->selectShape(mx, my)); 
         canvas->redraw();
     } else if (tool == SELECTOR && selectedShape) { 
         selectedShape->changePos(mx, my);

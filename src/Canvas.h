@@ -33,8 +33,6 @@ public:
 
     void clear();
 
-    void undo();
-
     void startScribble();
 
     void updateScribble(float x, float y, float r, float g, float b, int size);
@@ -46,6 +44,8 @@ public:
     void sendToBack(Shape* shape); 
 
     void sendToFront(Shape* shape); 
+
+    void erase(Shape* shape); 
 
 };
 

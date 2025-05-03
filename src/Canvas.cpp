@@ -46,13 +46,6 @@ void Canvas::clear() {
     shapes.clear();
 }
 
-void Canvas::undo(){
-    if (shapes.size() > 0){
-        delete shapes[shapes.size() - 1];
-        shapes.pop_back();
-    }
-}
-
 void Canvas::render() {
     for (unsigned int i = 0 ; i < shapes.size(); i++) {
         shapes[i]->draw();
@@ -98,6 +91,16 @@ void Canvas::sendToFront(Shape *shape){
             shapes.erase(shapes.begin() + i); 
             shapes.push_back(temp); 
             break;  
+        }
+    }
+}
+
+void Canvas::erase(Shape *shape){
+    for (unsigned int i = 0; i < shapes.size(); i++){
+        if (shapes[i] == shape){
+            delete shapes[i]; 
+            shapes.erase(shapes.begin() + i);
+            break; 
         }
     }
 }
