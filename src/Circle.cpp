@@ -51,3 +51,13 @@ void Circle::setColor(float r, float g, float b){
     this->b = b; 
 }
 
+void Circle::changeSize(int delta){
+    if (radius > 0.04){
+        radius += delta * .04; 
+    } else if (radius == 0.04 && delta == 1) { 
+        radius += delta * .04; 
+    } else if (radius == .04 && delta == -1){
+
+    }
+}
+

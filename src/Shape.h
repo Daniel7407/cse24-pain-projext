@@ -19,6 +19,7 @@ public:
     virtual void setColor(float r, float g, float b) = 0;
     virtual bool wasClicked(float x, float y) = 0; 
     virtual void changePos(float x, float y) = 0; 
+    virtual void changeSize(int delta) = 0; 
 
     // Any ADT must have a virtual destructor
     virtual ~Shape(){}

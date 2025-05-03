@@ -43,10 +43,17 @@ void Scribble::setColor(float r, float g, float b){
     }
 }
 
+void Scribble::changeSize(int delta){
+    for (unsigned int i = 0; i < points.size(); i++){
+        points[i]->changeSize(delta); 
+    }
+}
+
 Scribble::~Scribble(){
     for (unsigned int i = 0; i < points.size(); i++){
         delete points[i];
     }
     points.clear();
 }
+
 

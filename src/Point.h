@@ -21,6 +21,7 @@ public:
     bool wasClicked(float x, float y); 
     void changePos(float x, float y); 
     void setColor(float r, float g, float b); 
+    void changeSize(int delta); 
 
     float getX() const;
     float getY() const;

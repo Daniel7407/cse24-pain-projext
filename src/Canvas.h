@@ -42,6 +42,11 @@ public:
     void endScribble();
 
     void render();
+
+    void sendToBack(Shape* shape); 
+
+    void sendToFront(Shape* shape); 
+
 };
 
 #endif

@@ -80,6 +80,22 @@ void Application::onToolbarChange(bobcat::Widget* sender) {
         canvas->undo();
         canvas->redraw();
     }
+
+    if (selectedShape){
+        if (action == SEND_TO_BACK){
+            canvas->sendToBack(selectedShape); 
+            canvas->redraw(); 
+        } else if (action == SEND_TO_FRONT){
+            canvas->sendToFront(selectedShape); 
+            canvas->redraw(); 
+        } else if (action == INCREASE_SIZE){
+            selectedShape->changeSize(1); 
+            canvas->redraw(); 
+        } else if (action == DECREASE_SIZE){
+            selectedShape->changeSize(-1); 
+            canvas->redraw(); 
+        }
+    }
 }
 
 void Application::onColorSelectorChange(bobcat::Widget* sender){

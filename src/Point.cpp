@@ -77,3 +77,13 @@ void Point::setColor(float r, float g, float b){
     this->g = g; 
     this->b = b; 
 }
+
+void Point::changeSize(int delta){
+    if (size > 0.7){
+        size += delta * .7; 
+    } else if (size == 0.7 && delta == 1) { 
+        size += delta * .04; 
+    } else if (size == .7 && delta == -1){
+
+    }
+}

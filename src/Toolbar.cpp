@@ -1,5 +1,7 @@
 #include "Toolbar.h"
+#include "Enums.h"
 #include <FL/Enumerations.H>
+#include <bobcat_ui/textbox.h>
 using namespace bobcat;
 
 void Toolbar::deselectAllTools() {
@@ -11,6 +13,10 @@ void Toolbar::deselectAllTools() {
     polygonButton->color(FL_BACKGROUND_COLOR); 
     undoButton->color(FL_BACKGROUND_COLOR);
     selectorButton->color(FL_BACKGROUND_COLOR); 
+    sendToBackButton->color(FL_BACKGROUND_COLOR); 
+    sendToFrontButton->color(FL_BACKGROUND_COLOR); 
+    plusButton->color(FL_BACKGROUND_COLOR); 
+    minusButton->color(FL_BACKGROUND_COLOR); 
 }
 
 void Toolbar::visualizeSelectedTool() {
@@ -64,6 +70,14 @@ void Toolbar::onClick(bobcat::Widget* sender) {
         action = CLEAR;
     } else if (sender == selectorButton){
         tool = SELECTOR; 
+    } else if (sender == sendToBackButton){
+        action = SEND_TO_BACK; 
+    } else if (sender == sendToFrontButton){
+        action = SEND_TO_FRONT; 
+    } else if (sender == minusButton){
+        action = DECREASE_SIZE; 
+    } else if (sender == plusButton){
+        action = INCREASE_SIZE; 
     }
 
     if (onChangeCb) {
@@ -92,6 +106,11 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     undoButton = new Image(x, y + 300, 50, 50, "./assets/undo.png");
     clearButton = new Image(x, y + 350, 50, 50, "./assets/clear.png");
     selectorButton = new Image(x + 50, y, 50, 50, "./assets/mouse.png"); 
+    sendToBackButton = new Image(x + 50, y + 50, 50, 50, "./assets/send-to-back.png"); 
+    sendToFrontButton = new Image(x + 50, y + 100, 50, 50, "./assets/bring-to-front.png"); 
+    plusButton = new Image(x + 50, y + 150, 50, 50, "./assets/plus.png"); 
+    minusButton = new Image(x + 50, y + 250, 50, 50, "./assets/minus.png"); 
+    currentSize = new TextBox(x + 50, y + 200, 50, 50, "Size: "); 
 
     tool = PENCIL;
     action = NONE;
@@ -104,7 +123,11 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     polygonButton->box(FL_BORDER_BOX);
     undoButton->box(FL_BORDER_BOX);
     clearButton->box(FL_BORDER_BOX);
-    selectorButton->box(FL_BORDER_BOX); 
+    selectorButton->box(FL_BORDER_BOX);
+    sendToBackButton->box(FL_BORDER_BOX);
+    sendToFrontButton->box(FL_BORDER_BOX);
+    plusButton->box(FL_BORDER_BOX);
+    minusButton->box(FL_BORDER_BOX);
 
     visualizeSelectedTool();
 
@@ -117,4 +140,8 @@ Toolbar::Toolbar(int x, int y, int w, int h) : Group(x, y, w, h) {
     ON_CLICK(undoButton, Toolbar::onClick);
     ON_CLICK(clearButton, Toolbar::onClick);
     ON_CLICK(selectorButton, Toolbar::onClick); 
+    ON_CLICK(sendToBackButton, Toolbar::onClick); 
+    ON_CLICK(sendToFrontButton, Toolbar::onClick); 
+    ON_CLICK(plusButton, Toolbar::onClick); 
+    ON_CLICK(minusButton, Toolbar::onClick); 
 }

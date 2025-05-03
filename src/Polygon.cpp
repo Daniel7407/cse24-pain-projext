@@ -51,3 +51,15 @@ void Polygon::setColor(float r, float g, float b){
     this->g = g; 
     this->b = b; 
 }
+
+void Polygon::changeSize(int delta){
+    if (height > 0.04){
+        height += delta * .04; 
+        width += delta * .04;
+    } else if (height == 0.04 && delta == 1) { 
+        height += delta * .04; 
+        width += delta * .04;
+    } else if (height == .04 && delta == -1){
+
+    }
+}

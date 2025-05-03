@@ -2,6 +2,7 @@
 #define TOOLBAR_H
 
 #include <bobcat_ui/all.h>
+#include <bobcat_ui/textbox.h>
 #include "Enums.h"
 
 class Toolbar : public bobcat::Group {
@@ -14,6 +15,11 @@ class Toolbar : public bobcat::Group {
     bobcat::Image* undoButton;
     bobcat::Image* clearButton;
     bobcat::Image* selectorButton; 
+    bobcat::Image* sendToBackButton; 
+    bobcat::Image* sendToFrontButton; 
+    bobcat::Image* plusButton; 
+    bobcat::Image* minusButton; 
+    bobcat::TextBox* currentSize; 
 
     TOOL tool;
     ACTION action;

@@ -79,3 +79,25 @@ void Canvas::endScribble(){
         curr = nullptr;
     }
 }
+
+void Canvas::sendToBack(Shape* shape){
+    for (unsigned int i = 0 ; i < shapes.size(); i++) {
+        if (shapes[i] == shape){
+            Shape* temp = shapes[i]; 
+            shapes.erase(shapes.begin() + i); 
+            shapes.insert(shapes.begin(), temp); 
+            break;  
+        }
+    }
+}
+
+void Canvas::sendToFront(Shape *shape){
+    for (unsigned int i = 0 ; i < shapes.size(); i++) {
+        if (shapes[i] == shape){
+            Shape* temp = shapes[i]; 
+            shapes.erase(shapes.begin() + i); 
+            shapes.push_back(temp); 
+            break;  
+        }
+    }
+}
