@@ -81,7 +81,7 @@ void Point::setColor(float r, float g, float b){
 void Point::changeSize(int delta){
     if (size > 2){
         size += delta * 1; 
-    } else if (size <= 1.4 && delta == 1) { 
+    } else if (size <= 2 && delta == 1) { 
         size += delta * 1; 
     } 
 }
